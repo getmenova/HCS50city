@@ -1,4 +1,4 @@
-// Sums a range of numbers iteratively
+// add up all nums from 1 to input then for loop sums
 
 #include <cs50.h>
 #include <stdio.h>

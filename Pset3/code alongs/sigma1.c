@@ -1,4 +1,4 @@
-// Sums a range of numbers recursively
+// same as previous BUT uses recursion
 
 #include <cs50.h>
 #include <stdio.h>
