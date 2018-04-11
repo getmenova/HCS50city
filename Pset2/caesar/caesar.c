@@ -16,7 +16,7 @@ int main(int argc, string argv[])
 
     string s = get_string("input:  "); // from codealong example
 
-     printf("ciphertext: ");
+     printf("ciphertext: "); //had 'output', needed ciphertext
     for(i=0, n=strlen(s);n>i;i++)
         {
         if (isalpha (s[i])) // is this letter in Alphabet set?
