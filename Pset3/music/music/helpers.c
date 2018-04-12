@@ -62,17 +62,22 @@ In implementing this function, you might find pow and round, both declared in ma
 
 
 */
-
+//include proper headers
 #include <cs50.h>
-
+#include <math.h>
+#include <string.h>
+#include <ctype.h>
 #include "helpers.h"
 
 // Converts a fraction formatted as X/Y to eighths
 int duration(string fraction)
 {
-    // TODO split num and dom?
-
+    // TODO split num and dom? need to convert from ASCII form to digit form
+    int numerator = fraction[0] - '0';
+    int denominator = fraction[2] - '0';
     //smallest unit of 'MUSICAL NOTE' is 1/8***
+    return 8.0 * (double) numerator / denominator; //use double over float in this instance
+    //num = numerator den = denominator
 }
 
 // Calculates frequency (in Hz) of a note
