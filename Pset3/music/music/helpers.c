@@ -73,11 +73,19 @@ In implementing this function, you might find pow and round, both declared in ma
 int duration(string fraction)
 {
     // TODO split num and dom? need to convert from ASCII form to digit form
-    int numerator = fraction[0] - '0';
-    int denominator = fraction[2] - '0';
+    int n = fraction[0] - '0';
+    int d = fraction[2] - '0';
     //smallest unit of 'MUSICAL NOTE' is 1/8***
-    return 8.0 * (double) numerator / denominator; //use double over float in this instance
+    return 8.0 * (double) (n / d)); //use double over float in this instance - paras? check Order of ops in C
     //num = numerator den = denominator
+/* note notation: NOTE + OCTAVE @DURATION ==> duration = num/denom - returns a float ==> 1/4 = .25 * 8
+G4@1/4
+C5@1/4
+G4@1/4
+C4@1/4
+G4@1/4
+C5@1/4
+G4@1/4 */
 }
 
 // Calculates frequency (in Hz) of a note
@@ -89,7 +97,18 @@ int frequency(string note)
 // Determines whether a string represents a rest
 bool is_rest(string s)
 {
-    // TODO
+    // TODO boolean - if string is NOT EMPTY -  then it is a  NOT a rest
+    //if it isn't 0 - then false
+    // OTHERWISE true
+
+    if (strlen(s) !== 0)
+    {
+        return false;
+    }
+
+    {
+        return true;
+    }
 }
 
 
