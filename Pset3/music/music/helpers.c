@@ -95,6 +95,35 @@ int frequency(string note)
 // where X is any of A through G and Y is any of 0 through 8,
 // or formatted as XYZ, where X is any of A through G, Y is # or b,
 // and Z is any of 0 through 8
+
+
+//mova an octave - up and down - mult freq by 2 or divide freq by 2 - note is a string
+
+/*first char is a letter, if note is a sharp or flat, include accidental - if there is none, then 2nd char is going to be the octave
+if there was an accidental then 3rd char is octave
+
+Bb4, XYZ
+
+A4 = 440hz
+
+to change octave just move by 2 -round decimals to nearest integer
+
+//support A# and Ab mult by 2^1/12, can divide or mult by this to get sharp or flat
+
+A# would be 440 * 2 ^ 1/12  - don't forget octave inclusion. Adjust for sharps and flat and first or second.
+
+
+A/A# and Ab. Then include it.
+
+Semitones.
+
+
+Which note has which letter B is diff from A. Octave start at C.
+
+
+
+
+*/
 int frequency(string note);
 }
 
