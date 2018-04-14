@@ -68,6 +68,7 @@ In implementing this function, you might find pow and round, both declared in ma
 #include <string.h>
 #include <ctype.h>
 #include "helpers.h"
+#define A440 440
 
 // Converts a fraction formatted as X/Y to eighths
 int duration(string fraction)
@@ -76,7 +77,7 @@ int duration(string fraction)
     int n = fraction[0] - '0';
     int d = fraction[2] - '0';
     //smallest unit of 'MUSICAL NOTE' is 1/8***
-    return 8.0 * (double) (n / d)); //use double over float in this instance - paras? check Order of ops in C
+    return 8.0 * (double) (n / d); //use double over float in this instance - paras? check Order of ops in C
     //num = numerator den = denominator
 /* note notation: NOTE + OCTAVE @DURATION ==> duration = num/denom - returns a float ==> 1/4 = .25 * 8
 G4@1/4
@@ -89,8 +90,7 @@ G4@1/4 */
 }
 
 // Calculates frequency (in Hz) of a note
-int frequency(string note)
-{
+
     // TODO - need notes, accidentals, and octave// Calculates frequency (in Hz) of a note formatted as XY,
 // where X is any of A through G and Y is any of 0 through 8,
 // or formatted as XYZ, where X is any of A through G, Y is # or b,
@@ -119,30 +119,116 @@ Semitones.
 
 
 Which note has which letter B is diff from A. Octave start at C.
-
-
-
-
 */
-int frequency(string note);
-}
-
-// Determines whether a string represents a rest
-bool is_rest(string s)
+int frequency(string note)
 {
+    char fs_note[3];
+    char r_note[2];
+    string in_note;
+    char oct [2];
+    float octave;
+    float hz;
+    int hertz;
+    if (!isdigit(note[1]))
+    {
+        fs_note[0] = note[0];
+        fs_note[1] = note[1];
+        fs_note[2] = '\0';
+        in_note = fs_note;
+        oct[0] = note[2];
+        oct[1] = '\0';
+    }
+    else
+    {
+        r_note[0] = note[0];
+        r_note[1] = '\0';
+        in_note = r_note;
+        oct[0] = note[1];
+        oct[1] = '\0';
+    }
+    octave = atoi(oct);
+    if (!strcmp(in_note, "A"))
+    {
+        hz = 440 * pow(2, octave - 4);
+        hertz = round(hz);
+    }
+    else if (!strcmp(in_note, "A#") || (!strcmp(in_note, "Bb")))
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, 1.0 / 12);
+        hertz = round(hz);
+    }
+    else if (!strcmp(in_note, "B"))
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, 2.0 / 12);
+        hertz = round(hz);
+    }
+    else if (!strcmp(in_note, "Ab") || !strcmp(in_note, "G#"))
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, -1.0 / 12);
+        hertz = round(hz);
+    }
+    else if (!strcmp(in_note, "G"))
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, -2.0 / 12);
+        hertz = round(hz);
+    }
+    else if (!strcmp(in_note, "F#") || !strcmp(in_note, "Gb"))
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, -3.0 / 12);
+        hertz = round(hz);
+    }
+    else if (!strcmp(in_note, "F"))
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, -4.0 / 12);
+        hertz = round(hz);
+    }
+    else if (!strcmp(in_note, "E"))
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, -5.0 / 12);
+        hertz = round(hz);
+    }
+    else if (!strcmp(in_note, "D#") || !strcmp(in_note, "Eb"))
+    {
+        hz = 440 * (pow(2, octave - 4) * pow(2, (-6.0 / 12)));
+        hertz = round(hz);
+
+    }
+    else if (!strcmp(in_note, "D"))
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, -7.0 / 12);
+        hertz = round(hz);
+
+    }
+    else if (!strcmp(in_note, "C#") || !strcmp(in_note, "Db"))
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, -8.0 / 12);
+        hertz = round(hz);
+    }
+    else
+    {
+        hz = 440 * pow(2, octave - 4) * pow(2, -9.0 / 12);
+        hertz = round(hz);
+    }
+
+    return hertz;
+}
     // TODO boolean - if string is NOT EMPTY -  then it is a  NOT a rest
     //if it isn't 0 - then false
     // OTHERWISE true
-
-    if (strlen(s) !== 0)
+bool is_rest(string s)
+{
+   if (strlen(s) != 0)
     {
         return false;
     }
 
+    // a rest
+    else
     {
         return true;
     }
 }
+
 
 
 
