@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script>
+
+	           function greet()
+	           {
+	               alert(`hello, ${document.getElementById("name").value}!`);
+	           }
+
+	</script>
+	<title>dom0</title>
+</head>
+<body>
+	<form id="demo" name="demo" onsubmit="greet(); return false;">
+		<input autocomplete="off" autofocus="" id="name" placeholder="Name" type="text"> <input type="submit">
+	</form><!--
+
+In the body of the page, we create a simple form with a text input with an ID of name.
+Then, we specify that the onsubmit event handler for the form will call greet(), and we use return false; to prevent the browser from trying to submit the form by default.
+We also use autocomplete="off" to turn off the autocomplete dropdown in the form’s input, and autofocus to automatically bring the cursor into the form field, so we don’t need to click into the box before we can type in it.
+
+
+In the head of the page, we use the <script> tag to write JavaScript code. We declare the function greet and call the alert function with the name from the form when greet is called.
+To get the name in the form, we use document, a global variable that contains the entire page, and the built-in getElementById function of it, to select the element with ID of name.
+That element, an input text box, has a value attribute, which is the value inside it. And finally, we substitute that into our string with backticks, `, as shown.
+
+
+-->
+</body>
+</html>

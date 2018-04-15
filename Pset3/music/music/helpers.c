@@ -77,7 +77,7 @@ int duration(string fraction)
     int n = fraction[0] - '0';
     int d = fraction[2] - '0';
     //smallest unit of 'MUSICAL NOTE' is 1/8***
-    return 8.0 * (double) (n / d); //use double over float in this instance - paras? check Order of ops in C
+    return 8.0 * (double) n / d; //use double over float in this instance - paras? check Order of ops in C
     //num = numerator den = denominator
 /* note notation: NOTE + OCTAVE @DURATION ==> duration = num/denom - returns a float ==> 1/4 = .25 * 8
 G4@1/4

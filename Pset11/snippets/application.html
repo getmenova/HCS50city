@@ -1,0 +1,5 @@
+{% for registrant in registrants %}
+    <option value="{{ registrant.id }}"/>{{ registrant.name }} from {{ registrant.dorm }}</option>
+{% endfor %}
+
+<!-- form’s option has a value with the id of each registrant

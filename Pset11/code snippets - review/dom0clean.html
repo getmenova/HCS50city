@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dom1</title>
+</head>
+<body>
+	<form id="demo" name="demo">
+		<input autocomplete="off" autofocus="" id="name" placeholder="Name" type="text"> <input type="submit">
+	</form>
+	<script>
+
+	           document.getElementById("demo").onsubmit = function() {
+	               alert("hello, " + document.getElementById("name").value + "!"");
+	               return false;
+	           };
+
+	</script><!--  This way, our code is more readable, and we can have different people working on different areas of our application.
+
+We’ve moved our <script> tag to the bottom of the page, so our code only runs after the rest of the page has loaded.
+
+And we can again use document, a global variable that contains the entire page, and the built-in getElementById function of it, to select the element with ID demo, which is our form. Then we set the onsubmit event handler of demo with our script to an anonymous function, inside which we write the code from earlier.
+
+Another option:
+
+function greet()
+{
+    alert("hello, world");
+}
+
+document.getElementById("demo").onsubmit = greet;
+
+
+-->
+</body>
+</html>

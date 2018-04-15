@@ -1,0 +1,13 @@
+Review each lecture’s notes.
+
+Review each lecture’s source code, if any.
+
+Review each lecture’s slides.
+
+Attend or watch the review session.
+
+Review each lecture’s video, using its table of contents to focus on topics with which you’re less comfortable.
+
+Take last year’s quiz and, only after you’ve attempted each of its questions, review its sample solutions. Realize, though, that some topics covered last year might not have been covered in this term. Rely on this year’s lectures and problem sets as the official sources for this year’s topics.
+
+Review problem sets' specifications, sample solutions, and, if any, distribution code.
