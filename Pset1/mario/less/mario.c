@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 
-  int main(void) {
+int main(void){
 
     int height = -1;
 
@@ -14,15 +14,13 @@
     for (int row = 0; row < height; row++) {
 
       // print spaces
-
       for (int spaces = 0; spaces < (height - row - 1); spaces++) {
-        printf(" ");
+        printf(" "); // STYLE50 IS ADDING AN EXTRY PRINTF ""
       }
-
       for (int hashes = 0; hashes < (row + 2); hashes++) {
         printf("#");
       }
 
       printf("\n");
     }
-  }
+}

@@ -4,10 +4,11 @@
 #include <cs50.h>
 #include <math.h>
 
-  int main(void)
-  {
+int main(void){
+
     float dollars;
     do {
+
       dollars = get_float("Change: ");
     }
     while (dollars < 0);
@@ -28,6 +29,8 @@
 //penniesf
     coins += cents;
 
-    printf("%i\n", coins);}
+    printf("%i\n", coins);
 
-    //check50 cs50/2018/x/cash
+}
+
+//check50 cs50/2018/x/cash
