@@ -34,3 +34,4 @@ int main(void)
 }
 //passes style50 and check50 4.17.2018
 //path = check50 cs50/2018/x/cash
+///
