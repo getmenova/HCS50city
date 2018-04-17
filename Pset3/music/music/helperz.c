@@ -70,11 +70,13 @@ In implementing this function, you might find pow and round, both declared in ma
 #include "helpers.h"
 
 #define A440 440 //cornerstone key
-// decide if there's even a note being played first
+
 
  // TODO boolean - if string is NOT EMPTY -  then it is a  NOT a rest
     //if it isn't 0 - then false
     // OTHERWISE true
+
+    // decide if there's even a note being played first
 bool is_rest(string s)
 {
    if (strlen(s) != 0)
@@ -147,6 +149,38 @@ if (strlen(note) == 2) // Add in support for 'normal' note played - they call th
         // Convert octave number from ASCII to digit
         octave = note[2] - '0';
     }
+
+    double f = A440; //waypoint for babysteps
+
+    int babysteps = 0;
+    switch (toupper((unsigned char) keysize[0]))
+
+    {
+       case 'C':
+            babysteps = 3;
+            break;
+        case 'D':
+            babysteps = 5;
+            break;
+        case 'E':
+            babysteps = 7;
+            break;
+        case 'F':
+            babysteps = 8;
+            break;
+        case 'G':
+            babysteps = 10;
+            break;
+
+	    case 'A':
+            octave++; //include support for wraparound keys in next octave
+            break;
+        case 'B':
+            babysteps = 2;
+            octave++;
+            break;
+
+    }// support calc for number of babysteps
 // Calculates frequency (in Hz) of a note
 
     // TODO - need notes, accidentals, and octave// Calculates frequency (in Hz) of a note formatted as XY,
