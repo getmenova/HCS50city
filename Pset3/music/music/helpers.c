@@ -115,7 +115,14 @@ int frequency(string note)
     char keysize[3]; //build our note next in the trust tree
     int octave = 0; // set octave to origin
 
+if (strlen(note) == 2) // Add in support for 'normal' note played - they call them 'natural' notes in music!
+    {
+        // indicate key size - (2) characters
+        keysize[0] = note[0];
+        keysize[1] = '\0';
 
+        octave = note[1] - '0'; // convert the octave out of ASCII form and into digits
+    }
 
 // Calculates frequency (in Hz) of a note
 
