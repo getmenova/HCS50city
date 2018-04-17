@@ -124,6 +124,16 @@ if (strlen(note) == 2) // Add in support for 'normal' note played - they call th
         octave = note[1] - '0'; // convert the octave out of ASCII form and into digits
     }
 
+ else if (strlen(note) == 3) // Add support for sharps and flats - adding 1 more category to keysize
+    {
+
+        keysize[0] = note[0]; //see above, add 1 additional placeholder for the accidental
+        keysize[1] = note[1];
+        keysize[2] = '\0';
+
+        // Convert octave number from ASCII to digit
+        octave = note[2] - '0';
+    }
 // Calculates frequency (in Hz) of a note
 
     // TODO - need notes, accidentals, and octave// Calculates frequency (in Hz) of a note formatted as XY,
