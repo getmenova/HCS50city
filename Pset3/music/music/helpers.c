@@ -106,47 +106,9 @@ C4@1/4
 G4@1/4
 C5@1/4
 G4@1/4 */
-}
-
-//if there is a note, decide if it's natural, sharp or flat and adjust accordingly
-
-    if (keysize[1] == '#') //sharp, increase by 1 babystep
-    {
-        babysteps++;
-    }
 
 
-    else if (keysize[1] == 'b') // case 2, decrease 1 babystep
-    {
-        babysteps--;
-    }
 
-// Calculateing the freakiness of a note
-int frequency(string note)
-{
-
-    char keysize[3]; //build our note next in the trust tree
-    int octave = 0; // set octave to origin
-
-if (strlen(note) == 2) // Add in support for 'normal' note played - they call them 'natural' notes in music!
-    {
-        // indicate key size - (2) characters
-        keysize[0] = note[0];
-        keysize[1] = '\0';
-
-        octave = note[1] - '0'; // convert the octave out of ASCII form and into digits
-    }
-
- else if (strlen(note) == 3) // Add support for sharps and flats - adding 1 more category to keysize
-    {
-
-        keysize[0] = note[0]; //see above, add 1 additional placeholder for the accidental
-        keysize[1] = note[1];
-        keysize[2] = '\0';
-
-        // Convert octave number from ASCII to digit
-        octave = note[2] - '0';
-    }
 // Calculates frequency (in Hz) of a note
 
     // TODO - need notes, accidentals, and octave// Calculates frequency (in Hz) of a note formatted as XY,
