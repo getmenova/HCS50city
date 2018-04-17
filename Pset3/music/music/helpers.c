@@ -68,7 +68,26 @@ In implementing this function, you might find pow and round, both declared in ma
 #include <string.h>
 #include <ctype.h>
 #include "helpers.h"
-#define A440 440
+
+#define A440 440 //cornerstone key
+// decide if there's even a note being played first
+
+ // TODO boolean - if string is NOT EMPTY -  then it is a  NOT a rest
+    //if it isn't 0 - then false
+    // OTHERWISE true
+bool is_rest(string s)
+{
+   if (strlen(s) != 0)
+    {
+        return false;
+    }
+
+    // a rest
+    else
+    {
+        return true;
+    }
+}
 
 // Converts a fraction formatted as X/Y to eighths
 int duration(string fraction)
@@ -88,6 +107,15 @@ G4@1/4
 C5@1/4
 G4@1/4 */
 }
+
+// Calculateing the freakiness of a note
+int frequency(string note)
+{
+
+    char keysize[3]; //build our note next in the trust tree
+    int octave = 0; // set octave to origin
+
+
 
 // Calculates frequency (in Hz) of a note
 
@@ -119,8 +147,8 @@ Semitones.
 
 
 Which note has which letter B is diff from A. Octave start at C.
-*/
-int frequency(string note)
+*/ //4.17 - implement note categories and
+/* trash way of doing it int frequency(string note)
 {
     char fs_note[3];
     char r_note[2];
@@ -210,23 +238,7 @@ int frequency(string note)
         hertz = round(hz);
     }
 
-    return hertz;
-}
-    // TODO boolean - if string is NOT EMPTY -  then it is a  NOT a rest
-    //if it isn't 0 - then false
-    // OTHERWISE true
-bool is_rest(string s)
-{
-   if (strlen(s) != 0)
-    {
-        return false;
-    }
-
-    // a rest
-    else
-    {
-        return true;
-    }
+    return hertz; *
 }
 
 
