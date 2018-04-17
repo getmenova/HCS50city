@@ -181,7 +181,7 @@ if (strlen(note) == 2) // Add in support for 'normal' note played - they call th
             break;
 
     }// support calc for number of babysteps
-// Calculates frequency (in Hz) of a note
+// Calculates frequency (in Hz) of a note//
 
     // TODO - need notes, accidentals, and octave// Calculates frequency (in Hz) of a note formatted as XY,
 // where X is any of A through G and Y is any of 0 through 8,
