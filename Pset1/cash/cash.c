@@ -4,12 +4,12 @@
 #include <cs50.h>
 #include <math.h>
 
-int main(void){
-
+int main(void)
+{
     float dollars;
-    do {
-
-      dollars = get_float("Change: ");
+    do
+    {
+        dollars = get_float("Change: ");
     }
     while (dollars < 0);
 
@@ -32,5 +32,5 @@ int main(void){
     printf("%i\n", coins);
 
 }
-
-//check50 cs50/2018/x/cash
+//passes style50 and check50 4.17.2018
+//path = check50 cs50/2018/x/cash

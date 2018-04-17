@@ -1,26 +1,33 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int main(void){
+int main(void)
+{
 
     int height = -1;
 
-    while (height < 0 || height > 23) {
-      printf("Enter height between 0 - 23:");
-      height = get_int();
+    while (height < 0 || height > 23)
+    {
+        printf("Enter height between 0 - 23:");
+        height = get_int();
     }
 
     //iterate row times
-    for (int row = 0; row < height; row++) {
+    for (int row = 0; row < height; row++)
+    {
 
-      // print spaces
-      for (int spaces = 0; spaces < (height - row - 1); spaces++) {
-        printf(" "); // STYLE50 IS ADDING AN EXTRY PRINTF ""
-      }
-      for (int hashes = 0; hashes < (row + 2); hashes++) {
-        printf("#");
-      }
+        // print spaces
+        for (int spaces = 0; spaces < (height - row - 1); spaces++)
+        {
+            printf(" "); // STYLE50 IS ADDING AN EXTRY PRINTF ""
+        }
+        for (int hashes = 0; hashes < (row + 2); hashes++)
+        {
+            printf("#");
+        }
 
-      printf("\n");
+        printf("\n");
     }
 }
+
+//passes style50 and check50 4.17.2018
