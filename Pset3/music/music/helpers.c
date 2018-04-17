@@ -108,6 +108,19 @@ C5@1/4
 G4@1/4 */
 }
 
+//if there is a note, decide if it's natural, sharp or flat and adjust accordingly
+
+    if (keysize[1] == '#') //sharp, increase by 1 babystep
+    {
+        babysteps++;
+    }
+
+
+    else if (keysize[1] == 'b') // case 2, decrease 1 babystep
+    {
+        babysteps--;
+    }
+
 // Calculateing the freakiness of a note
 int frequency(string note)
 {
