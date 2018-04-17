@@ -49,3 +49,6 @@ int main(int argc, string argv[])
     }
     printf("\n");
 }
+
+
+//passes check50 and style50 4.17.2018
