@@ -180,9 +180,14 @@ if (strlen(note) == 2) // Add in support for 'normal' note played - they call th
             octave++;
             break;
 
-    }// support calc for number of babysteps
+    }
+
+    // support calc for number of babysteps
 // Calculates frequency (in Hz) of a note//
 
+//it's the final count(round)
+        return round(f * pow(2.0, babysteps / 12.0 + octave - 5.0));
+}
     // TODO - need notes, accidentals, and octave// Calculates frequency (in Hz) of a note formatted as XY,
 // where X is any of A through G and Y is any of 0 through 8,
 // or formatted as XYZ, where X is any of A through G, Y is # or b,
