@@ -1,3 +1,5 @@
+//(Emiton) Good program, very similar to mine
+
 #include<cs50.h>
 #include<stdio.h>
 #include<string.h>
@@ -21,6 +23,7 @@ int main(int argc, string argv[])
     {
         if (isalpha(s[i])) // is this letter in Alphabet set?
         {
+            //(Emiton) Good use of modulo to wrap around
             if (isupper(s[i]))// uppercasee
             {
                 printf("%c", ((s[i] - 'A'  + k) % 26) + 'A');

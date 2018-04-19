@@ -1,3 +1,5 @@
+//(Emiton) Overall great solution, very clean and straight forward
+
 // Output a user's initials
 #include <cs50.h>
 #include <ctype.h>
@@ -6,6 +8,8 @@
 
 int main(void)//passes check50 and style50 4.17.2018
 {
+    //(Emiton) Using an array is a good idea, but the fixed size scares me
+    //(Emiton) What if a person has more than 3 names
     char initials[4];
     string s = get_string("Name: ");//passes check50 and style50 4.17.2018
     int length = 0;

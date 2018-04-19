@@ -1,3 +1,5 @@
+//(Emiton) Great program. It was a good idea making the key upper case so that you would only need one case for it
+
 #include <stdio.h>
 #include <cs50.h>
 #include <ctype.h>
@@ -6,6 +8,7 @@
 
 int main(int argc, string argv[])
 {
+    //(Emiton) If someone enters a blank space, will that count as an arg?
     if (argc != 2 || strlen(argv[1]) == 0) // Exactly 2 args
     {
         printf("Usage: ./vigenere k\n");
@@ -20,6 +23,7 @@ int main(int argc, string argv[])
             printf("invalid k\n");
             return 1;
         }
+        //(Emiton) Great idea making sure the key is all uppercase, much more simple
         k[i] = toupper(k[i]); // ucase conversion
     }
     string plaintext = get_string("plaintext: "); //grab user input
