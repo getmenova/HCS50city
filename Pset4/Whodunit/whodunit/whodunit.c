@@ -74,9 +74,19 @@ int main(int argc, char *argv[])
             // read RGB triple from infile
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
 
+
+            if (triple.rgbtRed == 0xff) // Find mah red pixels
+            {
+                triple.rgbtRed = 0x46;
+                triple.rgbtGreen = 0x46;
+                triple.rgbtBlue = 0x46;
+                // Charcoalizard, I choose you to view the message!
+            }
             // write RGB triple to outfile
             fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
         }
+
+
 
         // skip over padding, if any
         fseek(inptr, padding, SEEK_CUR);
