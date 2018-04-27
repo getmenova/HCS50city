@@ -3,7 +3,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "bmp.h"
+#include "bmp.h" //input bitmap // looking to scale by (n)
+
+
+// Basic example from Zamyla "If my file was 1x1 and I wanted to scale by 3 -it would become 3x3"
+// header information is going to change
+// how are you going to update the header
+// access the variables within structs with .
+
+//file size, image size, width, height should delta
+
+//not just changing values
+
+//
+
+//
+
+
+
+
+
+
 
 int main(int argc, char *argv[])
 {
@@ -60,7 +80,7 @@ int main(int argc, char *argv[])
     fwrite(&bi, sizeof(BITMAPINFOHEADER), 1, outptr);
 
     // determine padding for scanlines
-    int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
+    int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4; // G width,  formula for determining padding
 
     // iterate over infile's scanlines
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
@@ -72,10 +92,14 @@ int main(int argc, char *argv[])
             RGBTRIPLE triple;
 
             // read RGB triple from infile
-            fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
+            fread(&triple, sizeof(RGBTRIPLE), 1, inptr); //
 
             // write RGB triple to outfile
-            fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
+            fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr); //frwrite add for loop? use thewidth of the file and our old formula to determine padding.
+
+
+            //remember to stretch vertically as well as horizontally
+            //scaling number is (n) - repeat t -->>> n-1 times as we have already  it once
         }
 
         // skip over padding, if any
