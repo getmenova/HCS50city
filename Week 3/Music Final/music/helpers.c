@@ -57,9 +57,17 @@ The effect of # and b, otherwise known as accidentals, is to raise or lower, res
 
 In implementing this function, you might find pow and round, both declared in math.h, of interest.
 
-
-
-
+//GREG peer review
+// code passes check50
+// code passes style50
+// code is organzied in a way that makes sense
+// variable names can be followed through the code
+// Rofm for improvement on the frequency function - could probably avoid using the ASCII conversions
+// but you can't complain too much when it passes check50!
+// when submitting a final version, I would remove most of the notes that aren't comments about lines of code, or move them to a separate file
+// appreciate the puns laden throughout !!
+// congrats on a complete pset3
+// end PR comments
 
 */
 //include proper headers
@@ -123,7 +131,6 @@ int frequency(string note)
         // indicate key size - (2) characters
         keysize[0] = note[0];
         keysize[1] = '\0';
-
         octave = note[1] - '0'; // convert the octave out of ASCII form and into digits
     }
 
